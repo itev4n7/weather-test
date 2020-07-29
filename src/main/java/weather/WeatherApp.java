@@ -4,23 +4,23 @@ import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class WeatherApp {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Stream.of(parseInput(scanner.nextLine()))
                 .map(Integer::parseInt)
-                .forEach(WeatherApp::printWeather);
+                .forEach(s -> System.out.println(printWeather(s)));
     }
 
-    private static void printWeather(int temperature) {
-        String massage = Stream.of(WeatherRange.values())
+    protected static String printWeather(int temperature) {
+        return Stream.of(WeatherRange.values())
                 .filter(it -> it.getRange().isInRange(temperature))
                 .findFirst()
                 .map(WeatherRange::getMassage)
-                .orElse("Please re-check results in 5 mins.");
-        System.out.println(massage);
+                .orElse(WeatherMassage.INVALID.getMassage());
     }
 
-    private static String parseInput(String value) {
+    protected static String parseInput(String value) {
         return value.trim().toLowerCase().replace("c", "").replace(" ", "");
     }
 }
