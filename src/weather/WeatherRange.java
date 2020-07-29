@@ -1,3 +1,5 @@
+package weather;
+
 public enum WeatherRange {
     SUBZERO(new IntRange(-50, -1), WeatherMassage.SUBZERO),
     COLD(new IntRange(0, 10), WeatherMassage.COLD),

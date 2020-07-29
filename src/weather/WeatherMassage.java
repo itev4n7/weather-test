@@ -1,3 +1,5 @@
+package weather;
+
 public enum WeatherMassage {
     SUBZERO("It’s super cold today. Be sure you dressed well!"),
     COLD("It’s windy outside, but we are sure you will enjoy your day"),

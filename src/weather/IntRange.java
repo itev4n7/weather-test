@@ -1,3 +1,5 @@
+package weather;
+
 public class IntRange implements Range {
     private final int lowerInclusiveBoundary;
     private final int upperInclusiveBoundary;

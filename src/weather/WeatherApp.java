@@ -1,3 +1,5 @@
+package weather;
+
 import java.util.Scanner;
 import java.util.stream.Stream;
 
